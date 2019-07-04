@@ -5,6 +5,10 @@ class ExampleAction {
     this.db = options.db; // 初始化後的 knex
   }
 
+  async find() {
+    return this.db('example').select();
+  }
+
   async create(data) {
     return this.db('example').insert(data);
   }
