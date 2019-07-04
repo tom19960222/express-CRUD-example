@@ -9,6 +9,7 @@ class ExampleService {
     const app = options.app; // 初始化後的 Express
     const middleware = new Middleware({ action: this.action });
 
+    app.get('/example', middleware.findExample());
     app.post('/example', middleware.createExample());
   }
 }
